@@ -74,16 +74,37 @@ Salidas: `resumen.csv`, `resumen.md`, `graficas/{tiempo,speedup_seq,speedup_self
 
 ## Ajustes de `ia_opt` (ablación incremental sobre `ia`)
 
-Aplicados, en este orden: (2) quitar el `memset` interno: el arnés y el
-contrato garantizan que `out` llega en ceros, así que ese `memset` era una
-escritura redundante de toda la imagen dentro del tiempo medido; (3) `proc_bind(spread)` en el pragma (solo ahí, sin variables de entorno
-globales), para fijar los hilos a núcleos distintos y reducir migraciones y
-variabilidad; con 16 hilos (sobresuscripción) se espera que pueda empeorar, corrección
-del comportamiento indefinido del puntero `irow + dx` fuera del arreglo, y
-(1) acumulación en registros. Cada paso tiene su commit, validación completa
-y piloto (`results/ablacion/`).
+**Versión final de `ia_opt` = `ia` + ajuste 2 + corrección del UB.**
 
-Descartados:
+Pasos de la ablación, cada uno con commit, validación completa (80
+configuraciones) y piloto en `results/ablacion/<paso>/`:
+
+| Paso | Cambio | Estado final |
+|---|---|---|
+| `0_base` | copia de `ia` | — |
+| `ajuste2` | quitar el `memset` interno: el arnés y el contrato garantizan que `out` llega en ceros, así que era una escritura redundante de toda la imagen dentro del tiempo medido | **aplicado** |
+| `ajuste3` | `proc_bind(spread)` en el pragma | revertido (sin efecto) |
+| `ub` | indexar `irow[x + dx]` en vez de formar `irow + dx`, puntero antes del inicio del arreglo cuando y+dy = 0 y dx < 0 (comportamiento indefinido en C) | **aplicado** |
+| `ajuste1` | acumular cada tira de 16 píxeles en `float acc[16]` y escribir `out` una vez | revertido (≈2x más lento) |
+
+**Ajuste 3, sin efecto.** En libgomp la cláusula `proc_bind(spread)` no fija
+hilos si no hay lista de lugares: sin `OMP_PLACES`, `omp_get_place_num()`
+devuelve -1 y cada hilo puede correr en las 12 CPU. Con `OMP_PLACES=cores`
+sí queda fijado. No se usa `OMP_PLACES` para no romper la igualdad de
+condiciones entre variantes. Prueba: `evidencia/ablacion/prueba_proc_bind.c`
+y su salida `prueba_proc_bind_salida.txt`. Las diferencias del piloto en ese
+paso son ruido.
+
+**Ajuste 1, fallido.** GCC -O2 no mantiene `acc[16]` en registros: lo ubica en
+la pila (`leaq 160(%rsp), %r15`) y el bucle interior hace `addps
+(%r15,%rax)` / `movaps %xmm0,(%r15,%rax)` en cada coeficiente, o sea, sigue
+leyendo y escribiendo memoria. Además, las k² lecturas del kernel y el test
+de borde pasan a repetirse cada 16 píxeles en lugar de cada 1024. Resultado:
+4096 px k=11 con 1 hilo pasa de 179 a 373 ms. Se descartó forzarlo con
+intrínsecas SSE porque convertiría `ia_opt` en una copia del enfoque de
+`manual`. Evidencia: `evidencia/ablacion/ajuste1_*` y `tiempos_ablacion.txt`.
+
+Descartados sin implementar:
 - **Procesar 2 filas de salida a la vez:** beneficio marginal frente al
   riesgo de errores en los bordes.
 - **Convolución separable:** cambia el algoritmo (solo sirve para kernels

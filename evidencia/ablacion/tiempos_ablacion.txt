@@ -1,0 +1,55 @@
+== 0_base
+validacion: 80 configs, 0 invalidas, err_max=0.000e+00
+4096px k=3 hilos=1: 21.234 ms ± 1.160
+4096px k=3 hilos=4: 8.791 ms ± 0.103
+4096px k=3 hilos=16: 9.009 ms ± 0.064
+4096px k=11 hilos=1: 175.953 ms ± 1.022
+4096px k=11 hilos=4: 47.187 ms ± 0.850
+4096px k=11 hilos=16: 36.938 ms ± 5.077
+512px k=11 hilos=1: 3.313 ms ± 0.059
+512px k=11 hilos=4: 0.861 ms ± 0.034
+512px k=11 hilos=16: 0.699 ms ± 0.059
+== ajuste2
+validacion: 80 configs, 0 invalidas, err_max=0.000e+00
+4096px k=3 hilos=1: 19.273 ms ± 0.168
+4096px k=3 hilos=4: 8.594 ms ± 0.047
+4096px k=3 hilos=16: 8.881 ms ± 0.074
+4096px k=11 hilos=1: 180.512 ms ± 0.422
+4096px k=11 hilos=4: 50.262 ms ± 0.179
+4096px k=11 hilos=16: 36.599 ms ± 2.064
+512px k=11 hilos=1: 2.991 ms ± 0.021
+512px k=11 hilos=4: 0.796 ms ± 0.059
+512px k=11 hilos=16: 0.730 ms ± 0.049
+== ajuste3
+validacion: 80 configs, 0 invalidas, err_max=0.000e+00
+4096px k=3 hilos=1: 18.590 ms ± 0.108
+4096px k=3 hilos=4: 8.399 ms ± 0.152
+4096px k=3 hilos=16: 9.358 ms ± 0.286
+4096px k=11 hilos=1: 177.041 ms ± 0.322
+4096px k=11 hilos=4: 48.331 ms ± 0.311
+4096px k=11 hilos=16: 33.405 ms ± 1.151
+512px k=11 hilos=1: 3.000 ms ± 0.013
+512px k=11 hilos=4: 0.775 ms ± 0.012
+512px k=11 hilos=16: 0.647 ms ± 0.039
+== ub
+validacion: 80 configs, 0 invalidas, err_max=0.000e+00
+4096px k=3 hilos=1: 20.265 ms ± 0.601
+4096px k=3 hilos=4: 8.593 ms ± 0.036
+4096px k=3 hilos=16: 8.732 ms ± 0.165
+4096px k=11 hilos=1: 178.774 ms ± 1.167
+4096px k=11 hilos=4: 48.356 ms ± 0.950
+4096px k=11 hilos=16: 35.310 ms ± 3.001
+512px k=11 hilos=1: 3.077 ms ± 0.012
+512px k=11 hilos=4: 0.782 ms ± 0.008
+512px k=11 hilos=16: 0.689 ms ± 0.083
+== ajuste1
+validacion: 80 configs, 0 invalidas, err_max=0.000e+00
+4096px k=3 hilos=1: 31.201 ms ± 0.215
+4096px k=3 hilos=4: 9.148 ms ± 0.520
+4096px k=3 hilos=16: 9.864 ms ± 0.205
+4096px k=11 hilos=1: 372.878 ms ± 0.260
+4096px k=11 hilos=4: 99.327 ms ± 0.238
+4096px k=11 hilos=16: 52.559 ms ± 1.791
+512px k=11 hilos=1: 5.961 ms ± 0.016
+512px k=11 hilos=4: 1.507 ms ± 0.002
+512px k=11 hilos=16: 1.055 ms ± 0.027

@@ -1,0 +1,43 @@
+== sin OMP_PLACES (condición del benchmark)
+n=16 hilo 0: cpus permitidas=12, place=-1, cpu actual=4
+n=16 hilo 1: cpus permitidas=12, place=-1, cpu actual=0
+n=16 hilo 2: cpus permitidas=12, place=-1, cpu actual=10
+n=16 hilo 3: cpus permitidas=12, place=-1, cpu actual=8
+n=16 hilo 4: cpus permitidas=12, place=-1, cpu actual=4
+n=16 hilo 5: cpus permitidas=12, place=-1, cpu actual=2
+n=16 hilo 6: cpus permitidas=12, place=-1, cpu actual=7
+n=16 hilo 7: cpus permitidas=12, place=-1, cpu actual=8
+n=16 hilo 8: cpus permitidas=12, place=-1, cpu actual=0
+n=16 hilo 9: cpus permitidas=12, place=-1, cpu actual=10
+n=16 hilo 10: cpus permitidas=12, place=-1, cpu actual=3
+n=16 hilo 11: cpus permitidas=12, place=-1, cpu actual=9
+n=16 hilo 12: cpus permitidas=12, place=-1, cpu actual=5
+n=16 hilo 13: cpus permitidas=12, place=-1, cpu actual=11
+n=16 hilo 14: cpus permitidas=12, place=-1, cpu actual=1
+n=16 hilo 15: cpus permitidas=12, place=-1, cpu actual=6
+n=4 hilo 0: cpus permitidas=12, place=-1, cpu actual=4
+n=4 hilo 1: cpus permitidas=12, place=-1, cpu actual=0
+n=4 hilo 2: cpus permitidas=12, place=-1, cpu actual=10
+n=4 hilo 3: cpus permitidas=12, place=-1, cpu actual=8
+
+== con OMP_PLACES=cores (solo contraste)
+n=16 hilo 0: cpus permitidas=2, place=0, cpu actual=1
+n=16 hilo 1: cpus permitidas=2, place=0, cpu actual=1
+n=16 hilo 2: cpus permitidas=2, place=1, cpu actual=2
+n=16 hilo 3: cpus permitidas=2, place=1, cpu actual=3
+n=16 hilo 4: cpus permitidas=2, place=2, cpu actual=4
+n=16 hilo 5: cpus permitidas=2, place=2, cpu actual=5
+n=16 hilo 6: cpus permitidas=2, place=3, cpu actual=7
+n=16 hilo 7: cpus permitidas=2, place=3, cpu actual=7
+n=16 hilo 8: cpus permitidas=2, place=4, cpu actual=8
+n=16 hilo 9: cpus permitidas=2, place=4, cpu actual=9
+n=16 hilo 10: cpus permitidas=2, place=5, cpu actual=10
+n=16 hilo 11: cpus permitidas=2, place=5, cpu actual=11
+n=16 hilo 12: cpus permitidas=2, place=0, cpu actual=0
+n=16 hilo 13: cpus permitidas=2, place=1, cpu actual=2
+n=16 hilo 14: cpus permitidas=2, place=2, cpu actual=5
+n=16 hilo 15: cpus permitidas=2, place=3, cpu actual=6
+n=4 hilo 0: cpus permitidas=2, place=0, cpu actual=0
+n=4 hilo 1: cpus permitidas=2, place=2, cpu actual=4
+n=4 hilo 2: cpus permitidas=2, place=4, cpu actual=8
+n=4 hilo 3: cpus permitidas=2, place=5, cpu actual=10

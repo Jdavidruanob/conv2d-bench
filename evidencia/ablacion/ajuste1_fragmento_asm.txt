@@ -1,0 +1,14 @@
+Ajuste 1 (commit e46a7ea): ensamblador gcc -O2 -fopenmp -std=c11 -msse4 de src/conv_ia_opt.c
+acc[16] se ubica en la pila:
+	leaq	160(%rsp), %r15
+
+Bucle interior (rama interior): carga y guarda acc en memoria en cada coeficiente:
+	shufps	$0, %xmm1, %xmm1
+.L34:
+	movups	(%rdx,%rax), %xmm0
+	mulps	%xmm1, %xmm0
+	addps	(%r15,%rax), %xmm0
+	movaps	%xmm0, (%r15,%rax)
+	addq	$16, %rax
+	cmpq	$64, %rax
+	jne	.L34
