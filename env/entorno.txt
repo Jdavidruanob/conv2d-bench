@@ -1,5 +1,5 @@
 == fecha
-2026-10-14T07:46:34-05:00
+2026-10-14T08:09:04-05:00
 == uname -a
 Linux fedora 7.2.8-100.fc43.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Sep 25 20:59:32 UTC 2026 x86_64 GNU/Linux
 == gcc --version
@@ -26,7 +26,7 @@ Core(s) per socket:                      6
 Socket(s):                               1
 Stepping:                                0
 Frequency boost:                         enabled
-CPU(s) scaling MHz:                      71%
+CPU(s) scaling MHz:                      57%
 CPU max MHz:                             4280.9849
 CPU min MHz:                             412.6250
 BogoMIPS:                                6588.21
@@ -59,3 +59,28 @@ Vulnerability Tsx async abort:           Not affected
 Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspace
 == OMP_*
 (ninguna)
+
+== condiciones de la corrida completa
+perfil de energía: balanced (powerprofilesctl no instalado; no se pudo cambiar a performance)
+gnome-software cerrado (pkill) 30 s antes de iniciar; Chrome y demás apps cerradas por el usuario
+carga promedio inicial (1/5/15 min): 0.42 0.46 0.57
+vmstat 2 5 antes de iniciar (columna id = % CPU libre):
+procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu
+ 0  0      0 3591712   3940 9642912    0    0  1243  1278 6591    6  3  1 96  0  0  0
+ 0  0      0 3591964   3940 9642916    0    0     0     0  806 1084  0  0 99  0  0  0
+ 0  0      0 3591964   3940 9642916    0    0     0     0  761 1043  0  0 100  0  0  0
+ 0  0      0 3593744   3940 9642916    0    0     0     0  838 1073  0  0 99  0  0  0
+ 0  0      0 3593744   3940 9642916    0    0     0     0  800  849  0  0 100  0  0  0
+procesos activos con más CPU antes de iniciar:
+%CPU COMMAND
+ 100 ps
+ 4.6 gnome-shell
+ 4.1 claude
+ 1.0 claude
+ 1.0 ptyxis
+ 0.4 systemd-udevd
+ 0.3 irq/9-acpi
+inicio: 2026-10-14T08:09:03-05:00
+fin: 2026-10-14T08:12:58-05:00
+carga promedio al terminar: 2.81 1.43 0.92
