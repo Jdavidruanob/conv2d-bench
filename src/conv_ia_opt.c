@@ -8,7 +8,7 @@ void convolve_ia_opt(const float *in, float *out, int width, int height,
 {
     const int c = ksize / 2;
 
-    #pragma omp parallel for num_threads(nthreads) schedule(static)
+    #pragma omp parallel for num_threads(nthreads) proc_bind(spread) schedule(static)
     for (int y = 0; y < height; y++) {
         float *orow = out + (size_t)y * width;
         int dy_lo = (y - c < 0) ? -y : -c;

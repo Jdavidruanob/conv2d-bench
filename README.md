@@ -76,7 +76,9 @@ Salidas: `resumen.csv`, `resumen.md`, `graficas/{tiempo,speedup_seq,speedup_self
 
 Aplicados, en este orden: (2) quitar el `memset` interno: el arnés y el
 contrato garantizan que `out` llega en ceros, así que ese `memset` era una
-escritura redundante de toda la imagen dentro del tiempo medido; (3) `proc_bind(spread)` en el pragma, corrección
+escritura redundante de toda la imagen dentro del tiempo medido; (3) `proc_bind(spread)` en el pragma (solo ahí, sin variables de entorno
+globales), para fijar los hilos a núcleos distintos y reducir migraciones y
+variabilidad; con 16 hilos (sobresuscripción) se espera que pueda empeorar, corrección
 del comportamiento indefinido del puntero `irow + dx` fuera del arreglo, y
 (1) acumulación en registros. Cada paso tiene su commit, validación completa
 y piloto (`results/ablacion/`).
