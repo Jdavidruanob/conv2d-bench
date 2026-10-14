@@ -1,0 +1,35 @@
+seq       512px k=3  hilos=[1]  0.0 s
+seq       512px k=5  hilos=[1]  0.0 s
+seq       512px k=7  hilos=[1]  0.0 s
+seq       512px k=11 hilos=[1]  0.1 s
+seq      1024px k=3  hilos=[1]  0.0 s
+seq      1024px k=5  hilos=[1]  0.1 s
+seq      1024px k=7  hilos=[1]  0.2 s
+seq      1024px k=11 hilos=[1]  0.4 s
+seq      2048px k=3  hilos=[1]  0.2 s
+seq      2048px k=5  hilos=[1]  0.4 s
+seq      2048px k=7  hilos=[1]  0.7 s
+seq      2048px k=11 hilos=[1]  1.7 s
+seq      4096px k=3  hilos=[1]  0.8 s
+seq      4096px k=5  hilos=[1]  1.6 s
+seq      4096px k=7  hilos=[1]  2.7 s
+seq      4096px k=11 hilos=[1]  6.8 s
+omitiendo ia (stub)
+omitiendo ia_opt (stub)
+manual    512px k=3  hilos=[1 2 4 8 16]  0.0 s
+manual    512px k=5  hilos=[1 2 4 8 16]  0.0 s
+manual    512px k=7  hilos=[1 2 4 8 16]  0.0 s
+manual    512px k=11 hilos=[1 2 4 8 16]  0.1 s
+manual   1024px k=3  hilos=[1 2 4 8 16]  0.0 s
+manual   1024px k=5  hilos=[1 2 4 8 16]  0.1 s
+manual   1024px k=7  hilos=[1 2 4 8 16]  0.1 s
+manual   1024px k=11 hilos=[1 2 4 8 16]  0.2 s
+manual   2048px k=3  hilos=[1 2 4 8 16]  0.2 s
+manual   2048px k=5  hilos=[1 2 4 8 16]  0.3 s
+manual   2048px k=7  hilos=[1 2 4 8 16]  0.4 s
+manual   2048px k=11 hilos=[1 2 4 8 16]  0.8 s
+manual   4096px k=3  hilos=[1 2 4 8 16]  0.8 s
+manual   4096px k=5  hilos=[1 2 4 8 16]  1.1 s
+manual   4096px k=7  hilos=[1 2 4 8 16]  1.5 s
+manual   4096px k=11 hilos=[1 2 4 8 16]  3.1 s
+Total: 24 s -> results/pilot/crudo_piloto.csv
