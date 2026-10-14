@@ -24,10 +24,9 @@ void convolve_ia_opt(const float *in, float *out, int width, int height,
                     const float w = krow[c - dx];
                     int xs = x0 > -dx ? x0 : -dx;
                     int xe = x1 < width - dx ? x1 : width - dx;
-                    const float *src = irow + dx;
                     #pragma omp simd
                     for (int x = xs; x < xe; x++)
-                        orow[x] += w * src[x];
+                        orow[x] += w * irow[x + dx];
                 }
             }
         }
