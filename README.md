@@ -74,8 +74,9 @@ Salidas: `resumen.csv`, `resumen.md`, `graficas/{tiempo,speedup_seq,speedup_self
 
 ## Ajustes de `ia_opt` (ablación incremental sobre `ia`)
 
-Aplicados, en este orden: (2) quitar el `memset` interno (el contrato
-garantiza `out` en ceros), (3) `proc_bind(spread)` en el pragma, corrección
+Aplicados, en este orden: (2) quitar el `memset` interno: el arnés y el
+contrato garantizan que `out` llega en ceros, así que ese `memset` era una
+escritura redundante de toda la imagen dentro del tiempo medido; (3) `proc_bind(spread)` en el pragma, corrección
 del comportamiento indefinido del puntero `irow + dx` fuera del arreglo, y
 (1) acumulación en registros. Cada paso tiene su commit, validación completa
 y piloto (`results/ablacion/`).

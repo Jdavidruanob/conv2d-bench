@@ -16,7 +16,6 @@ void convolve_ia_opt(const float *in, float *out, int width, int height,
 
         for (int x0 = 0; x0 < width; x0 += XBLOCK) {
             int x1 = x0 + XBLOCK < width ? x0 + XBLOCK : width;
-            memset(orow + x0, 0, (size_t)(x1 - x0) * sizeof(float));
 
             for (int dy = dy_lo; dy <= dy_hi; dy++) {
                 const float *irow = in + (size_t)(y + dy) * width;
