@@ -3,3 +3,4 @@ build/
 .venv/
 data/images/
 __pycache__/
+paper_datos.zip

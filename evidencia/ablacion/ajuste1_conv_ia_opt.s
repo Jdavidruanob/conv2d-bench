@@ -1,4 +1,4 @@
-	.file	"a1.c"
+	.file	"conv_ia_opt.c"
 	.text
 	.p2align 4
 	.type	convolve_ia_opt._omp_fn.0, @function

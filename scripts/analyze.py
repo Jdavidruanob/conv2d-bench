@@ -25,7 +25,7 @@ df = pd.read_csv(crudo)
 claves = ["variante", "imagen_px", "ksize", "hilos"]
 res = (df.groupby(claves)
          .agg(n=("tiempo_ms", "size"), tiempo_ms=("tiempo_ms", "mean"),
-              std_ms=("tiempo_ms", "std"), min_ms=("tiempo_ms", "min"),
+              std_ms=("tiempo_ms", "std"), mediana_ms=("tiempo_ms", "median"), min_ms=("tiempo_ms", "min"),
               max_ms=("tiempo_ms", "max"), validas=("valido", "sum"),
               error_max=("error_max", "max"))
          .reset_index())
@@ -54,7 +54,7 @@ res = res.drop(columns=["t_seq", "s_seq", "t_1", "s_1"]) \
          .sort_values(["imagen_px", "ksize", "variante", "hilos"])
 
 res.to_csv(salida / "resumen.csv", index=False, float_format="%.6g")
-cols_md = ["variante", "imagen_px", "ksize", "hilos", "n", "tiempo_ms", "std_ms", "cv_pct",
+cols_md = ["variante", "imagen_px", "ksize", "hilos", "n", "tiempo_ms", "std_ms", "mediana_ms", "min_ms", "cv_pct",
            "speedup_seq", "eficiencia_seq", "speedup_self", "eficiencia_self", "validas", "error_max"]
 with open(salida / "resumen.md", "w") as f:
     f.write(f"# Resumen ({crudo})\n\n")

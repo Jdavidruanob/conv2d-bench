@@ -1,5 +1,5 @@
 Herramienta: Claude Code (agente de IA con ejecución)
 Modelo: Claude Sonnet 5.5
 Fecha: 14/10/2026
-Entorno: carpeta aislada ../prueba/ (carpeta aislada fuera del proyecto), sin contexto del proyecto.
+Entorno: carpeta aislada ../prueba/ (fuera del proyecto), sin contexto del proyecto.
 Archivo entregado: convolve_ia_original.c (sha256 77de0c96fa3c15d4fe6e2623a1ae6f7e05390dc9d6c90c7f94a23cdeb5e0a702)
