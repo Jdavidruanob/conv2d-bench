@@ -72,6 +72,24 @@ dos formas: **(a)** `T1 = seq` (principal, archivos `*_seq_*`) y **(b)**
 speedup se propaga como `σS = S·√((σ1/T1)² + (σp/Tp)²)`.
 Salidas: `resumen.csv`, `resumen.md`, `graficas/{tiempo,speedup_seq,speedup_self,eficiencia_seq,eficiencia_self}_vs_hilos.png`.
 
+## Ajustes de `ia_opt` (ablación incremental sobre `ia`)
+
+Aplicados, en este orden: (2) quitar el `memset` interno (el contrato
+garantiza `out` en ceros), (3) `proc_bind(spread)` en el pragma, corrección
+del comportamiento indefinido del puntero `irow + dx` fuera del arreglo, y
+(1) acumulación en registros. Cada paso tiene su commit, validación completa
+y piloto (`results/ablacion/`).
+
+Descartados:
+- **Procesar 2 filas de salida a la vez:** beneficio marginal frente al
+  riesgo de errores en los bordes.
+- **Convolución separable:** cambia el algoritmo (solo sirve para kernels
+  separables) y rompe la equivalencia con `manual` y con la especificación
+  común de kernel general k×k.
+
+Evidencia de la versión `ia` (prompt, resumen del agente, archivo original y
+metadatos): `evidencia/ia/`.
+
 ## Observaciones sobre el código del repo `manual`
 
 - Su `benchmark.c` valida con `temp*temp > 0.0001`: la tolerancia absoluta
