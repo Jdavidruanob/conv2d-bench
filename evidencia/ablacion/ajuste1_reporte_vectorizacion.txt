@@ -1,110 +1,110 @@
-src/conv_ia_opt.c@e46a7ea:14:24: missed: couldn't vectorize loop
-src/conv_ia_opt.c@e46a7ea:14:24: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
-src/conv_ia_opt.c@e46a7ea:17:29: missed: couldn't vectorize loop
-src/conv_ia_opt.c@e46a7ea:17:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
-src/conv_ia_opt.c@e46a7ea:39:32: optimized: loop vectorized using 16 byte vectors
-src/conv_ia_opt.c@e46a7ea:22:37: missed: couldn't vectorize loop
-src/conv_ia_opt.c@e46a7ea:22:37: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
-src/conv_ia_opt.c@e46a7ea:25:38: missed: couldn't vectorize loop
-src/conv_ia_opt.c@e46a7ea:25:38: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
-src/conv_ia_opt.c@e46a7ea:30:32: optimized: loop vectorized using 16 byte vectors
-src/conv_ia_opt.c@e46a7ea:34:44: optimized: loop vectorized using 16 byte vectors
-src/conv_ia_opt.c@e46a7ea:11:13: note: vectorized 3 loops in function.
-src/conv_ia_opt.c@e46a7ea:11:13: note: ***** Analysis succeeded with vector mode V4SI
-src/conv_ia_opt.c@e46a7ea:11:13: note: SLPing BB part
-src/conv_ia_opt.c@e46a7ea:11:13: note: Costing subgraph: 
-src/conv_ia_opt.c@e46a7ea:11:13: note: node 0x1b0ee798 (max_nunits=2, refcnt=1) vector(2) long unsigned int
-src/conv_ia_opt.c@e46a7ea:11:13: note: op template: _71 = (long unsigned int) _70;
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 0 _71 = (long unsigned int) _70;
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 1 _75 = (long unsigned int) _74;
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	children 0x1b0ee8a8
-src/conv_ia_opt.c@e46a7ea:11:13: note: node (external) 0x1b0ee8a8 (max_nunits=1, refcnt=1) vector(2) int
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	{ _70, _74 }
-src/conv_ia_opt.c@e46a7ea:11:13: note: Cost model analysis: 
-src/conv_ia_opt.c@e46a7ea:11:13: note: Cost model analysis for part in loop 4:
+src/conv_ia_opt.c@2bddf30:14:24: missed: couldn't vectorize loop
+src/conv_ia_opt.c@2bddf30:14:24: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/conv_ia_opt.c@2bddf30:17:29: missed: couldn't vectorize loop
+src/conv_ia_opt.c@2bddf30:17:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/conv_ia_opt.c@2bddf30:39:32: optimized: loop vectorized using 16 byte vectors
+src/conv_ia_opt.c@2bddf30:22:37: missed: couldn't vectorize loop
+src/conv_ia_opt.c@2bddf30:22:37: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/conv_ia_opt.c@2bddf30:25:38: missed: couldn't vectorize loop
+src/conv_ia_opt.c@2bddf30:25:38: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/conv_ia_opt.c@2bddf30:30:32: optimized: loop vectorized using 16 byte vectors
+src/conv_ia_opt.c@2bddf30:34:44: optimized: loop vectorized using 16 byte vectors
+src/conv_ia_opt.c@2bddf30:11:13: note: vectorized 3 loops in function.
+src/conv_ia_opt.c@2bddf30:11:13: note: ***** Analysis succeeded with vector mode V4SI
+src/conv_ia_opt.c@2bddf30:11:13: note: SLPing BB part
+src/conv_ia_opt.c@2bddf30:11:13: note: Costing subgraph: 
+src/conv_ia_opt.c@2bddf30:11:13: note: node 0x1b0ee798 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+src/conv_ia_opt.c@2bddf30:11:13: note: op template: _71 = (long unsigned int) _70;
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 0 _71 = (long unsigned int) _70;
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 1 _75 = (long unsigned int) _74;
+src/conv_ia_opt.c@2bddf30:11:13: note: 	children 0x1b0ee8a8
+src/conv_ia_opt.c@2bddf30:11:13: note: node (external) 0x1b0ee8a8 (max_nunits=1, refcnt=1) vector(2) int
+src/conv_ia_opt.c@2bddf30:11:13: note: 	{ _70, _74 }
+src/conv_ia_opt.c@2bddf30:11:13: note: Cost model analysis: 
+src/conv_ia_opt.c@2bddf30:11:13: note: Cost model analysis for part in loop 4:
   Vector cost: 20
   Scalar cost: 4
-src/conv_ia_opt.c@e46a7ea:11:13: missed: not vectorized: vectorization is not profitable.
-src/conv_ia_opt.c@e46a7ea:11:13: note: ***** The result for vector mode V16QI would be the same
-src/conv_ia_opt.c@e46a7ea:11:13: note: ***** Re-trying analysis with vector mode V8QI
-src/conv_ia_opt.c@e46a7ea:11:13: note: ***** Analysis failed with vector mode V8QI
-src/conv_ia_opt.c@e46a7ea:11:13: note: ***** Re-trying analysis with vector mode V4QI
-src/conv_ia_opt.c@e46a7ea:11:13: note: ***** Analysis failed with vector mode V4QI
-src/conv_ia_opt.c@e46a7ea:6:6: note: vectorized 0 loops in function.
-src/conv_ia_opt.c@e46a7ea:6:6: missed: statement clobbers memory: __builtin_GOMP_parallel (convolve_ia_opt._omp_fn.0, &.omp_data_o.4, nthreads.7_17, 4);
-src/conv_ia_opt.c@e46a7ea:11:13: note: ***** Analysis succeeded with vector mode V4SI
-src/conv_ia_opt.c@e46a7ea:11:13: note: SLPing BB part
-src/conv_ia_opt.c@e46a7ea:11:13: note: Costing subgraph: 
-src/conv_ia_opt.c@e46a7ea:11:13: note: node 0x1b16e570 (max_nunits=2, refcnt=1) vector(2) int
-src/conv_ia_opt.c@e46a7ea:11:13: note: op template: .omp_data_o.4.width = width_11(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 0 .omp_data_o.4.width = width_11(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 1 .omp_data_o.4.height = height_9(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	children 0x1b16e5f8
-src/conv_ia_opt.c@e46a7ea:11:13: note: node (external) 0x1b16e5f8 (max_nunits=1, refcnt=1) vector(2) int
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	{ width_11(D), height_9(D) }
-src/conv_ia_opt.c@e46a7ea:11:13: note: Cost model analysis: 
-src/conv_ia_opt.c@e46a7ea:11:13: note: Cost model analysis for part in loop 0:
+src/conv_ia_opt.c@2bddf30:11:13: missed: not vectorized: vectorization is not profitable.
+src/conv_ia_opt.c@2bddf30:11:13: note: ***** The result for vector mode V16QI would be the same
+src/conv_ia_opt.c@2bddf30:11:13: note: ***** Re-trying analysis with vector mode V8QI
+src/conv_ia_opt.c@2bddf30:11:13: note: ***** Analysis failed with vector mode V8QI
+src/conv_ia_opt.c@2bddf30:11:13: note: ***** Re-trying analysis with vector mode V4QI
+src/conv_ia_opt.c@2bddf30:11:13: note: ***** Analysis failed with vector mode V4QI
+src/conv_ia_opt.c@2bddf30:6:6: note: vectorized 0 loops in function.
+src/conv_ia_opt.c@2bddf30:6:6: missed: statement clobbers memory: __builtin_GOMP_parallel (convolve_ia_opt._omp_fn.0, &.omp_data_o.4, nthreads.7_17, 4);
+src/conv_ia_opt.c@2bddf30:11:13: note: ***** Analysis succeeded with vector mode V4SI
+src/conv_ia_opt.c@2bddf30:11:13: note: SLPing BB part
+src/conv_ia_opt.c@2bddf30:11:13: note: Costing subgraph: 
+src/conv_ia_opt.c@2bddf30:11:13: note: node 0x1b16e570 (max_nunits=2, refcnt=1) vector(2) int
+src/conv_ia_opt.c@2bddf30:11:13: note: op template: .omp_data_o.4.width = width_11(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 0 .omp_data_o.4.width = width_11(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 1 .omp_data_o.4.height = height_9(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	children 0x1b16e5f8
+src/conv_ia_opt.c@2bddf30:11:13: note: node (external) 0x1b16e5f8 (max_nunits=1, refcnt=1) vector(2) int
+src/conv_ia_opt.c@2bddf30:11:13: note: 	{ width_11(D), height_9(D) }
+src/conv_ia_opt.c@2bddf30:11:13: note: Cost model analysis: 
+src/conv_ia_opt.c@2bddf30:11:13: note: Cost model analysis for part in loop 0:
   Vector cost: 28
   Scalar cost: 24
-src/conv_ia_opt.c@e46a7ea:11:13: missed: not vectorized: vectorization is not profitable.
-src/conv_ia_opt.c@e46a7ea:11:13: note: Costing subgraph: 
-src/conv_ia_opt.c@e46a7ea:11:13: note: node 0x1b16e708 (max_nunits=2, refcnt=1) vector(2) long unsigned int
-src/conv_ia_opt.c@e46a7ea:11:13: note: op template: .omp_data_o.4.in = in_15(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 0 .omp_data_o.4.in = in_15(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 1 .omp_data_o.4.out = out_13(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	children 0x1b16e790
-src/conv_ia_opt.c@e46a7ea:11:13: note: node (external) 0x1b16e790 (max_nunits=1, refcnt=1) vector(2) long unsigned int
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	{ in_15(D), out_13(D) }
-src/conv_ia_opt.c@e46a7ea:11:13: note: Cost model analysis: 
-src/conv_ia_opt.c@e46a7ea:11:13: note: Cost model analysis for part in loop 0:
+src/conv_ia_opt.c@2bddf30:11:13: missed: not vectorized: vectorization is not profitable.
+src/conv_ia_opt.c@2bddf30:11:13: note: Costing subgraph: 
+src/conv_ia_opt.c@2bddf30:11:13: note: node 0x1b16e708 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+src/conv_ia_opt.c@2bddf30:11:13: note: op template: .omp_data_o.4.in = in_15(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 0 .omp_data_o.4.in = in_15(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 1 .omp_data_o.4.out = out_13(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	children 0x1b16e790
+src/conv_ia_opt.c@2bddf30:11:13: note: node (external) 0x1b16e790 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+src/conv_ia_opt.c@2bddf30:11:13: note: 	{ in_15(D), out_13(D) }
+src/conv_ia_opt.c@2bddf30:11:13: note: Cost model analysis: 
+src/conv_ia_opt.c@2bddf30:11:13: note: Cost model analysis for part in loop 0:
   Vector cost: 28
   Scalar cost: 24
-src/conv_ia_opt.c@e46a7ea:11:13: missed: not vectorized: vectorization is not profitable.
-src/conv_ia_opt.c@e46a7ea:11:13: note: ***** The result for vector mode V16QI would be the same
-src/conv_ia_opt.c@e46a7ea:11:13: note: ***** Re-trying analysis with vector mode V8QI
-src/conv_ia_opt.c@e46a7ea:11:13: note: ***** Analysis succeeded with vector mode V8QI
-src/conv_ia_opt.c@e46a7ea:11:13: note: SLPing BB part
-src/conv_ia_opt.c@e46a7ea:11:13: note: Costing subgraph: 
-src/conv_ia_opt.c@e46a7ea:11:13: note: node 0x1b16e790 (max_nunits=2, refcnt=1) vector(2) int
-src/conv_ia_opt.c@e46a7ea:11:13: note: op template: .omp_data_o.4.width = width_11(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 0 .omp_data_o.4.width = width_11(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 1 .omp_data_o.4.height = height_9(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	children 0x1b16e570
-src/conv_ia_opt.c@e46a7ea:11:13: note: node (external) 0x1b16e570 (max_nunits=1, refcnt=1) vector(2) int
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	{ width_11(D), height_9(D) }
-src/conv_ia_opt.c@e46a7ea:11:13: note: Cost model analysis: 
-src/conv_ia_opt.c@e46a7ea:11:13: note: Cost model analysis for part in loop 0:
+src/conv_ia_opt.c@2bddf30:11:13: missed: not vectorized: vectorization is not profitable.
+src/conv_ia_opt.c@2bddf30:11:13: note: ***** The result for vector mode V16QI would be the same
+src/conv_ia_opt.c@2bddf30:11:13: note: ***** Re-trying analysis with vector mode V8QI
+src/conv_ia_opt.c@2bddf30:11:13: note: ***** Analysis succeeded with vector mode V8QI
+src/conv_ia_opt.c@2bddf30:11:13: note: SLPing BB part
+src/conv_ia_opt.c@2bddf30:11:13: note: Costing subgraph: 
+src/conv_ia_opt.c@2bddf30:11:13: note: node 0x1b16e790 (max_nunits=2, refcnt=1) vector(2) int
+src/conv_ia_opt.c@2bddf30:11:13: note: op template: .omp_data_o.4.width = width_11(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 0 .omp_data_o.4.width = width_11(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 1 .omp_data_o.4.height = height_9(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	children 0x1b16e570
+src/conv_ia_opt.c@2bddf30:11:13: note: node (external) 0x1b16e570 (max_nunits=1, refcnt=1) vector(2) int
+src/conv_ia_opt.c@2bddf30:11:13: note: 	{ width_11(D), height_9(D) }
+src/conv_ia_opt.c@2bddf30:11:13: note: Cost model analysis: 
+src/conv_ia_opt.c@2bddf30:11:13: note: Cost model analysis for part in loop 0:
   Vector cost: 28
   Scalar cost: 24
-src/conv_ia_opt.c@e46a7ea:11:13: missed: not vectorized: vectorization is not profitable.
-src/conv_ia_opt.c@e46a7ea:11:13: note: Costing subgraph: 
-src/conv_ia_opt.c@e46a7ea:11:13: note: node 0x1b16e5f8 (max_nunits=1, refcnt=1) vector(1) long unsigned int
-src/conv_ia_opt.c@e46a7ea:11:13: note: op template: .omp_data_o.4.in = in_15(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 0 .omp_data_o.4.in = in_15(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 1 .omp_data_o.4.out = out_13(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 2 .omp_data_o.4.kernel = kernel_7(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	children 0x1b16e4e8
-src/conv_ia_opt.c@e46a7ea:11:13: note: node (external) 0x1b16e4e8 (max_nunits=1, refcnt=1) vector(1) long unsigned int
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	{ in_15(D), out_13(D), kernel_7(D) }
-src/conv_ia_opt.c@e46a7ea:11:13: note: Cost model analysis: 
-src/conv_ia_opt.c@e46a7ea:11:13: note: Cost model analysis for part in loop 0:
+src/conv_ia_opt.c@2bddf30:11:13: missed: not vectorized: vectorization is not profitable.
+src/conv_ia_opt.c@2bddf30:11:13: note: Costing subgraph: 
+src/conv_ia_opt.c@2bddf30:11:13: note: node 0x1b16e5f8 (max_nunits=1, refcnt=1) vector(1) long unsigned int
+src/conv_ia_opt.c@2bddf30:11:13: note: op template: .omp_data_o.4.in = in_15(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 0 .omp_data_o.4.in = in_15(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 1 .omp_data_o.4.out = out_13(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 2 .omp_data_o.4.kernel = kernel_7(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	children 0x1b16e4e8
+src/conv_ia_opt.c@2bddf30:11:13: note: node (external) 0x1b16e4e8 (max_nunits=1, refcnt=1) vector(1) long unsigned int
+src/conv_ia_opt.c@2bddf30:11:13: note: 	{ in_15(D), out_13(D), kernel_7(D) }
+src/conv_ia_opt.c@2bddf30:11:13: note: Cost model analysis: 
+src/conv_ia_opt.c@2bddf30:11:13: note: Cost model analysis for part in loop 0:
   Vector cost: 66
   Scalar cost: 36
-src/conv_ia_opt.c@e46a7ea:11:13: missed: not vectorized: vectorization is not profitable.
-src/conv_ia_opt.c@e46a7ea:11:13: note: ***** Re-trying analysis with vector mode V4QI
-src/conv_ia_opt.c@e46a7ea:11:13: note: ***** Analysis succeeded with vector mode V4QI
-src/conv_ia_opt.c@e46a7ea:11:13: note: SLPing BB part
-src/conv_ia_opt.c@e46a7ea:11:13: note: Costing subgraph: 
-src/conv_ia_opt.c@e46a7ea:11:13: note: node 0x1b16e4e8 (max_nunits=1, refcnt=1) vector(1) int
-src/conv_ia_opt.c@e46a7ea:11:13: note: op template: .omp_data_o.4.width = width_11(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 0 .omp_data_o.4.width = width_11(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 1 .omp_data_o.4.height = height_9(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	stmt 2 .omp_data_o.4.ksize = ksize_1(D);
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	children 0x1b16e790
-src/conv_ia_opt.c@e46a7ea:11:13: note: node (external) 0x1b16e790 (max_nunits=1, refcnt=1) vector(1) int
-src/conv_ia_opt.c@e46a7ea:11:13: note: 	{ width_11(D), height_9(D), ksize_1(D) }
-src/conv_ia_opt.c@e46a7ea:11:13: note: Cost model analysis: 
-src/conv_ia_opt.c@e46a7ea:11:13: note: Cost model analysis for part in loop 0:
+src/conv_ia_opt.c@2bddf30:11:13: missed: not vectorized: vectorization is not profitable.
+src/conv_ia_opt.c@2bddf30:11:13: note: ***** Re-trying analysis with vector mode V4QI
+src/conv_ia_opt.c@2bddf30:11:13: note: ***** Analysis succeeded with vector mode V4QI
+src/conv_ia_opt.c@2bddf30:11:13: note: SLPing BB part
+src/conv_ia_opt.c@2bddf30:11:13: note: Costing subgraph: 
+src/conv_ia_opt.c@2bddf30:11:13: note: node 0x1b16e4e8 (max_nunits=1, refcnt=1) vector(1) int
+src/conv_ia_opt.c@2bddf30:11:13: note: op template: .omp_data_o.4.width = width_11(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 0 .omp_data_o.4.width = width_11(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 1 .omp_data_o.4.height = height_9(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	stmt 2 .omp_data_o.4.ksize = ksize_1(D);
+src/conv_ia_opt.c@2bddf30:11:13: note: 	children 0x1b16e790
+src/conv_ia_opt.c@2bddf30:11:13: note: node (external) 0x1b16e790 (max_nunits=1, refcnt=1) vector(1) int
+src/conv_ia_opt.c@2bddf30:11:13: note: 	{ width_11(D), height_9(D), ksize_1(D) }
+src/conv_ia_opt.c@2bddf30:11:13: note: Cost model analysis: 
+src/conv_ia_opt.c@2bddf30:11:13: note: Cost model analysis for part in loop 0:
   Vector cost: 66
   Scalar cost: 36
-src/conv_ia_opt.c@e46a7ea:11:13: missed: not vectorized: vectorization is not profitable.
+src/conv_ia_opt.c@2bddf30:11:13: missed: not vectorized: vectorization is not profitable.

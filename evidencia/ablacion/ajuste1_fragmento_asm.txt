@@ -1,4 +1,4 @@
-Ajuste 1 (commit e46a7ea): ensamblador gcc -O2 -fopenmp -std=c11 -msse4 de src/conv_ia_opt.c
+Ajuste 1 (commit 2bddf30): ensamblador gcc -O2 -fopenmp -std=c11 -msse4 de src/conv_ia_opt.c
 acc[16] se ubica en la pila:
 	leaq	160(%rsp), %r15
 
