@@ -1,0 +1,16 @@
+Escribí convolve_ia.c en ../prueba/ (carpeta aislada fuera del proyecto) con la firma exacta que pediste. Lo probé y da error máximo de unos 5e-7 frente a una referencia secuencial en doble precisión, muy por debajo de 1e-4.
+
+Cómo funciona
+- Paralelismo: #pragma omp parallel for num_threads(nthreads) schedule(static) reparte las filas de salida entre exactamente nthreads hilos. Cada fila es independiente, así que no hay condiciones de carrera.
+- Cálculo: para cada fila de salida, acumula w * in[y+dy][x+dx] sobre tramos contiguos de x con #pragma omp simd.
+- Convolución verdadera: el peso es kernel[(c-dy)*ksize + (c-dx)], tal como lo definiste.
+- Bordes: los rangos de dy y x se recortan a la imagen, así que lo que cae fuera no aporta nada (relleno de ceros).
+- Salida: cada fila se pone a cero antes de acumular, por lo que no depende de que out llegue en ceros.
+- Caché: la fila se procesa en bloques de 1024 columnas para que el acumulador quepa en L1.
+
+Pruebas
+- Compilé con gcc -O2 -fopenmp -std=c11 -msse4 -Wall, sin avisos.
+- Probé tamaños de 37, 512, 2048 y 4096 px (el de 37 con una altura distinta, para cubrir imágenes no cuadradas).
+- Probé kernels de 3, 5, 7 y 11, y nthreads de 1, 2, 4, 8 y 16, contra la referencia secuencial.
+- Ninguna combinación superó el 1e-4 de tolerancia.
+- Tiempos con kernel 11 en 4096×4096: 0,19 s con 1 hilo, 0,06 s con 4 y 0,047 s con 16.

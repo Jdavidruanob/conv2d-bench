@@ -1,0 +1,23 @@
+Escribe en C11 + OpenMP una convolución 2D paralela con EXACTAMENTE esta firma:
+
+void convolve_ia(const float *in, float *out, int width, int height,
+                 const float *kernel, int ksize, int nthreads);
+
+Especificación:
+- in: imagen en escala de grises, 1 canal, width x height floats en [0,1],
+  orden fila-mayor: pixel (x,y) = in[y*width + x]. No modificar in.
+- out: mismo tamaño y orden. Llega inicializado en ceros. Escribir en out[y*width+x]
+  el resultado completo de cada píxel (asignar o acumular sobre 0 da igual).
+- kernel: ksize x ksize floats, fila-mayor, ksize impar (3, 5, 7 u 11),
+  YA normalizado (suma 1). No modificarlo ni renormalizarlo.
+- Convolución VERDADERA (kernel volteado). Con c = ksize/2:
+  out[y][x] = sum_{dy=-c..c} sum_{dx=-c..c} kernel[(c-dy)*ksize + (c-dx)] * in[y+dy][x+dx]
+- Bordes: relleno de ceros (los vecinos fuera de la imagen no aportan; no
+  replicar ni reflejar bordes). La salida tiene el mismo tamaño que la entrada.
+- Paralelismo: usar exactamente nthreads hilos (p. ej. omp_set_num_threads(nthreads)
+  o num_threads(nthreads)). nthreads puede ser 1, 2, 4, 8 o 16 (16 > núcleos lógicos).
+- Tamaños: imágenes cuadradas de 512, 1024, 2048 y 4096 px.
+- Corrección: error absoluto máximo por píxel <= 1e-4 frente a la versión secuencial.
+- Compilación: gcc -O2 -fopenmp -std=c11 -msse4 (-lm). Solo C estándar + OpenMP;
+  puede incluir <omp.h>. No usar bibliotecas externas.
+- Entregar solo el archivo .c con la función (y los #include que necesite).
